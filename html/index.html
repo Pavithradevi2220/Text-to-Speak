@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="container">
+        <form name="f1">
+        <h1>Text To Speech</h1>
+        <textarea id="textTospeak"></textarea>
+        <center><button type="button" onclick="speak()">  Listen  <i class="fa-solid fa-volume-high"></i></i></button></center> 
+    </form>
+    </div>
+
+    <!--javascript  -->
+    <script>
+        var speech=new SpeechSynthesisUtterance();
+
+    //    function
+    function speak(){
+        var textTospeak=document.getElementById("textTospeak").value;
+        speech.text=textTospeak;
+        speech.rate=1;
+        speech.volume=1;
+        speech.pitch=1;
+        window.speechSynthesis.speak(speech);
+    }
+
+
+        
+    </script>
+    
+</body>
+</html>
